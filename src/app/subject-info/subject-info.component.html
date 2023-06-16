@@ -1,0 +1,129 @@
+<div class="main">
+    <div class="card">
+        <div class="tabs">
+            <ul>
+                <li>
+                    <button (click)="showHome()" [style.borderBottom]="home? '2px solid #5c616e' : 'none'">Osnovne
+                        informacije</button>
+                </li>
+                <li>
+                    <button (click)="showLiterature()"
+                        [style.borderBottom]="literature? '2px solid #5c616e' : 'none'">Literatura</button>
+                </li>
+                <li>
+                    <button (click)="showFiles()"
+                        [style.borderBottom]="files? '2px solid #5c616e' : 'none'">Predavanja</button>
+                </li>
+                <li style="float: right;">
+                    <button (click)="addPdf()"
+                        [style.borderBottom]="pdfAdd? '2px solid #5c616e' : 'none'">Dodaj</button>
+                </li>
+
+            </ul>
+        </div>
+        <div *ngIf="home">
+            <h1>.NET Web Development</h1>
+            <p>
+                Ovo je intenzivni kurs namenjen onima koji žele da steknu kompetencije junior
+                full stack developer-a za razvoj web aplikacija na .NET platformi. Gradivo obuhvata razvoj
+                serverskog dela web aplikacija upotrebom .NET tehnologija i klijentskog dela web aplikacija
+                korišćenjem JavaScript jezika i pridruženih tehnologija.
+            </p>
+            <h3>Trajanje</h3>
+            <p>Ukupno trajanje kursa je oko 15 nedelja, u toku kojih se realizuje 132 časa nastave, od po 45 minuta.
+                Nastava je organizovana u 33 predavanja, od po 4 časa. Kurs obuhvata tri pripremna predavanja i tri
+                modula,
+                pri čemu svaki modul sadrži 10 predavanja (40 časova). Održavaju se 3 predavanja nedeljno, u večernjim
+                terminima
+                od 18:00 do 21:00 čas.</p>
+            <p>Kalendarom kursa su na kraju svakog modula predviđene pauze za pripremu polaznika,
+                nakon kojih se organizuje poseban termin za ispit. Uključujući termine za predavanja,
+                pauze za pripremu i termine za ispite, kurs ukupno traje oko 3 meseca i 3 nedelje.</p>
+            <p>Kalendar kursa na kojem je upis u toku, možete pogledati ako kliknete na dugme “Pogledaj kalendar”,
+                koje se nalazi u donjem desnom uglu forme za prijavu.</p>
+            <h3>Cijena &nbsp; 106.800 rsd</h3>
+            <p>* Navedena cena se primenjuje na kurseve koji počinju od avgusta 2023.</p>
+            <p>* Za kurseve koji se realizuju ranije, važi stara cena u iznosu od 96.000 RSD.</p>
+            <p>* Uslov za realizaciju planiranih kurseva je upis neophodnog broja polaznika.</p>
+        </div>
+
+        <div style="overflow-x: auto;" *ngIf="files">
+            <table id="lessons">
+                <tr>
+                    <th>Name</th>
+                    <th>Date Created</th>
+                    <th>Download</th>
+                </tr>
+                <tr>
+                    <td><button (click)="showPDF()" class="container"><mat-icon class="icon" aria-hidden="false"
+                                aria-label="Example home icon" fontIcon="picture_as_pdf"></mat-icon>
+                            <span class="text">&nbsp; Agilno planiranje i razvoj</span></button></td>
+                    <td>Maria Anders</td>
+                    <td><a style="text-decoration: none; color: black;" href="assets/sample.pdf" class="container"
+                            download><mat-icon class="icon1" aria-hidden="false" aria-label="Example home icon"
+                                fontIcon="download"></mat-icon></a></td>
+                </tr>
+                <tr>
+                    <td><button (click)="showPDF()" class="container"><mat-icon class="icon" aria-hidden="false"
+                                aria-label="Example home icon" fontIcon="picture_as_pdf"></mat-icon><span
+                                class="text">&nbsp; Razvoj vođen testovima</span></button></td>
+                    <td>Christina Berglund</td>
+                    <td><a style="text-decoration: none; color: black;" href="assets/sample.pdf" class="container"
+                            download><mat-icon class="icon1" aria-hidden="false" aria-label="Example home icon"
+                                fontIcon="download"></mat-icon></a></td>
+                </tr>
+                <tr>
+                    <td><button (click)="showPDF()" class="container"><mat-icon class="icon" aria-hidden="false"
+                                aria-label="Example home icon" fontIcon="picture_as_pdf"></mat-icon><span
+                                class="text">&nbsp; Dizajn vođen domenom</span></button></td>
+                    <td>Francisco Chang</td>
+                    <td><a style="text-decoration: none; color: black;" href="assets/sample.pdf" class="container"
+                            download><mat-icon class="icon1" aria-hidden="false" aria-label="Example home icon"
+                                fontIcon="download"></mat-icon></a></td>
+                </tr>
+            </table>
+        </div>
+        <div *ngIf="pdfAdd">
+            <div class="center-div">
+                <div class="row">
+                   
+                    <div class="col-4" id="col-4-add">
+                        <label>Naslov</label>
+                        <input type="text">
+                    </div>
+                    <div class="col-4" id="col-4-add-side"></div>
+                    <div class="col-4" id="col-4-add-side"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-8" id="col-8-add">
+                        <!-- <label>PDF dokument</label>
+                        <input type="file"> -->
+                        <!-- <label class="drop-container">
+                            <span class="drop-title">Drop files here</span>
+                            or
+                            <input type="file" accept="pdf/*" required>
+                        </label> -->
+
+                        <label>PDF dokument</label>
+                        <input type="file" accept="pdf/*">
+                        
+
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-4" id="col-4-add" style="text-align: left;">
+                        <button class="add">Dodaj</button>
+                    </div>
+                    <div class="col-4" id="col-4-add-side">
+                    </div>
+                    <div class="col-4" id="col-4-add-side">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

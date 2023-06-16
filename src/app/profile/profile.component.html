@@ -1,0 +1,182 @@
+<div class="main">
+    <h1 style="margin-left: 30px; margin-bottom: 20px;">Profil</h1>
+    <div class="row">
+        <div id="col-4-profile" class="col-4">
+            <div class="card">
+                <div class="center-image">
+                    <img src="assets/female.png" alt="Avatar">
+                </div>
+                <label class="center-label">Ana Bogdanovic</label>
+                <label class="center-label">anabogdanovic@gmail.com</label>
+                <label class="center-label education">Katedra za primjenjene racunarske nauke</label>
+
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="card">
+                <div class="tabs">
+                    <ul>
+                        <li><button (click)="showUserInfo()"
+                                [style.borderBottom]="userInfo? '2px solid #5c616e' : 'none'">Osnovni podaci</button>
+                        </li>
+                        <li><button (click)="showBiography()"
+                                [style.borderBottom]="biography? '2px solid #5c616e' : 'none'">Biografija</button></li>
+                        <li><button (click)="showPapers()"
+                                [style.borderBottom]="papers? '2px solid #5c616e' : 'none'">Radovi</button></li>
+
+                    </ul>
+                </div>
+                <div *ngIf="userInfo">
+                    <div class="center-div">
+                        <div class="row">
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Ime</label>
+                                <input type="text" value="Ana" disabled />
+                            </div>
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Prezime</label>
+                                <input type="text" value="Bogdanovic" disabled />
+                            </div>
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Pol</label>
+                                <input type="text" value="Zenski" disabled />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Datum rodjenja</label>
+                                <input type="date" value="1995-10-24" disabled />
+                            </div>
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Mjesto rodjenja</label>
+                                <input type="text" value="Novi Sad" disabled />
+                            </div>
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Drzava rodjenja</label>
+                                <input type="text" value="Srbija" disabled />
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Adresa stanovanja</label>
+                                <input type="text" value="Ilije Bircanina 5" />
+                            </div>
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Mjesto stanovanja</label>
+                                <input type="text" value="Novi Sad" />
+                            </div>
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Mobilni telefon</label>
+                                <input type="text" value="0645265623" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">E-mail adresa</label>
+                                <input type="text" value="anabogdanovic@gmail.com" disabled />
+                            </div>
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Akademsko zvanje</label>
+                                <input type="text" value="Redovni profesor" />
+                            </div>
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Radno mjesto</label>
+                                <input type="text" value="Katedra za primjenjene racunarske nauke" />
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+
+                        <div class="row">
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Lozinka</label>
+                                <input type="password" value="nesto" />
+                            </div>
+                            <div id="col4-user" class="col-4">
+                                <label class="user-label">Potvrda lozinke</label>
+                                <input type="password" value="nesto" />
+                            </div>
+                            <div class="col-4">
+
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row">
+                            <div class="col-4" style="text-align: left;">
+                                <button class="button-update">Azuriraj podatke</button>
+                            </div>
+                            <div class="col-4">
+
+                            </div>
+                            <div class="col-4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="biography">
+                    <p>Rođen u Novom Sadu 02.07.1981. godine. Završio osnovnu školu i gimnaziju u Odžacima,
+                        nižu muzičku školu u Apatinu i srednju muzičku školu u Zrenjaninu. Osnovne studije upisao
+                        2000.
+                        godine na Fakultetu tehničkih nauka u Novom Sadu, oblast: Elektrotehnika i računarstvo,
+                        odsek:
+                        Računarstvo i automatika. U toku osnovnih studija više puta nagrađivan od Univerziteta u
+                        Novom
+                        Sadu
+                        (nagrada "Mileva Marić-Ajnštajn", izuzetne nagrade za postignut uspeh u toku školskih
+                        2002/2003,
+                        2003/2004 i
+                        2004/2005 godina i nagrade za urađene temate).</p>
+                    <p>
+                        Dobio je i nagradnu stipendiju za 500 najboljih studenata u R Srbiji
+                        od Ambasade Kraljevine Norveške u Beogradu. Diplomirao je 14.04.2005.
+                        godine na Fakultetu tehničkih nauka u Novom Sadu, na temu: "Rešenje jednodimenzionalnog
+                        bin-packing problema primenom genetskog algoritma" sa ocenom 10. Prosečna ocena na osnovnim
+                        studijama je: 9,71.
+                    </p>
+                    <p>
+                        Postdiplomske studije upisao 2005. godine na Fakultetu tehničkih nauka u Novom Sadu,
+                        odsek: Opšte discipline u tehnici, smer: Matematika u tehnici (predmeti: Kombinatorika,
+                        Teorija grafova, Teorija igara, Statistika, Teorija algoritama i programiranje, Objektno
+                        orijentisane tehnologije).
+                        Sve ispite predviđene nastavnim planom u okviru postdiplomskih studija položio je u roku i sa
+                        ocenama 10.
+                        Magistarsku tezu: "Invarijanta klase u objektno orijentisanom programiranju" uspešno odbranio
+                        06.03.2008. godine.
+                        Doktorsku disertaciju: "Analiza osobina dinamičkih postuslova u Horovim tripletima" uspešno
+                        odbranio 13.12.2010. godine.
+                    </p>
+                    <p>
+                        Od 01.04.2007. godine zaposlen je na Fakultetu tehničkih nauka u Novom Sadu,
+                        prvo kao saradnik u nastavi, asistent i docent, a zatim kao vanredni i redovni profesor.
+                    </p>
+                </div>
+
+                <div class="papers-div"  *ngIf="papers">
+                    <table id="papers">
+                        <tr>
+                            <th>Naziv</th>
+                            <th id="visibility">U ustanovi</th>
+                        </tr>
+                        <tr>
+                            <td>Rešenje jednodimenzionalnog bin-packing problema primenom genetskog algoritma</td>
+                            <td id="visibility">Fakultet tehnickih nauka</td>
+                        </tr>
+                        <tr>
+                            <td>Invarijanta klase u objektno orijentisanom programiranju</td>
+                            <td id="visibility">Fakultet tehnickih nauka</td>
+                        </tr>
+                        <tr>
+                            <td>Analiza osobina dinamičkih postuslova u Horovim tripletima</td>
+                            <td id="visibility">Fakultet tehnickih nauka</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

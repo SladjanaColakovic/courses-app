@@ -1,0 +1,132 @@
+<div class="main">
+    <h1 style="margin-left: 15px; margin-bottom: 20px;">Rezultati</h1>
+    <div class="card">
+        <mat-tab-group (selectedTabChange)="changeYear($event)">
+            <mat-tab [label]="year.fromYear + '/' + year.toYear" *ngFor="let year of studentYears">
+                <!-- <ng-template matTabContent>
+                    {{year.fromYear}}/{{year.toYear}}
+                  </ng-template> -->
+            </mat-tab>
+        </mat-tab-group>
+        <mat-tab-group *ngIf="yearClicked" (selectedTabChange)="changeDepartment($event)">
+            <mat-tab [label]="d.name" *ngFor="let d of year.departments">
+                <!-- <ng-template matTabContent>
+                    {{d.name}}
+                  </ng-template> -->
+            </mat-tab>
+        </mat-tab-group>
+        <mat-tab-group *ngIf="departmentClicked" (selectedTabChange)="changeSubject($event)">
+            <mat-tab [label]="s.name" *ngFor="let s of departmet.subjects">
+                
+                <ng-template matTabContent>
+                    <!-- {{s.id}} -->
+                    
+                    <div class="table-content">
+                        <table id="students" mat-table [dataSource]="dataSource">
+                            <ng-container matColumnDef="name">
+                              <th mat-header-cell *matHeaderCellDef> Ime </th>
+                              <td mat-cell *matCellDef="let element" (click)="element.editing = true">
+                                <div *ngIf="!element.editing; else editingTemplateName">
+                                  {{element.studentName}}
+                                </div>
+                                <ng-template #editingTemplateName>
+                                  <input [(ngModel)]="element.studentName"  (blur)="element.editing = false">
+                                </ng-template>
+                              </td>
+                            </ng-container>
+                          
+                            <ng-container matColumnDef="surname">
+                              <th mat-header-cell *matHeaderCellDef> Prezime </th>
+                              <td mat-cell *matCellDef="let element" (click)="element.editing = true">
+                                <div *ngIf="!element.editing; else editingTemplateSurname">
+                                  {{element.studentSurname}}
+                                </div>
+                                <ng-template #editingTemplateSurname>
+                                  <input [(ngModel)]="element.studentSurname"  (blur)="element.editing = false">
+                                </ng-template>
+                              </td>
+                            </ng-container>
+
+
+                            <ng-container matColumnDef="index">
+                                <th mat-header-cell *matHeaderCellDef> Index </th>
+                                <td mat-cell *matCellDef="let element" (click)="element.editing = true">
+                                  <div *ngIf="!element.editing; else editingTemplateIndex">
+                                    {{element.studentIndex}}
+                                  </div>
+                                  <ng-template #editingTemplateIndex>
+                                    <input [(ngModel)]="element.studentIndex"  (blur)="element.editing = false">
+                                  </ng-template>
+                                </td>
+                              </ng-container>
+
+
+                              <ng-container matColumnDef="prePoints">
+                                <th mat-header-cell *matHeaderCellDef> Predispitne obaveze </th>
+                                <td mat-cell *matCellDef="let element" (click)="element.editing = true">
+                                  <div *ngIf="!element.editing; else editingTemplatePrePoints">
+                                    {{element.preExamPoints}}
+                                  </div>
+                                  <ng-template #editingTemplatePrePoints>
+                                    <input [(ngModel)]="element.preExamPoints"  (blur)="element.editing = false">
+                                  </ng-template>
+                                </td>
+                              </ng-container>
+
+                              <ng-container matColumnDef="points">
+                                <th mat-header-cell *matHeaderCellDef> Usmeni </th>
+                                <td mat-cell *matCellDef="let element" (click)="element.editing = true">
+                                  <div *ngIf="!element.editing; else editingTemplatePoints">
+                                    {{element.examPoints}}
+                                  </div>
+                                  <ng-template #editingTemplatePoints>
+                                    <input [(ngModel)]="element.examPoints"  (blur)="element.editing = false">
+                                  </ng-template>
+                                </td>
+                              </ng-container>
+
+                              <ng-container matColumnDef="mark">
+                                <th mat-header-cell *matHeaderCellDef> Ocjena </th>
+                                <td mat-cell *matCellDef="let element" (click)="element.editing = true">
+                                  <div *ngIf="!element.editing; else editingTemplateMark">
+                                    {{element.mark}}
+                                  </div>
+                                  <ng-template #editingTemplateMark>
+                                    <input [(ngModel)]="element.mark"  (blur)="element.editing = false">
+                                  </ng-template>
+                                </td>
+                              </ng-container>
+                          
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                          </table>
+                        <!-- <table id="students">
+                            <tr>
+                                <th>Ime</th>
+                                <th>Prezime</th>
+                                <th>Index</th>
+                                <th>Predispitne obaveze</th>
+                                <th>Ispitne obaveze</th>
+                                <th>Ocjena</th>
+                            </tr>
+                            <tr *ngFor="let s of filteredStudentsDuties">
+                                <td>{{s.studentName}}</td>
+                                <td>{{s.studentSurname}}</td>
+                                <td>{{s.studentIndex}}</td>
+                                <td>{{s.preExamPoints}}</td>
+                                <td>{{s.examPoints}}</td>
+                                <td *ngIf="s.mark !== 0">{{s.mark}}</td>
+                                <td *ngIf="s.mark === 0">&nbsp;</td>
+                            </tr>
+                        </table> -->
+                    </div>
+                </ng-template>
+            </mat-tab>
+        </mat-tab-group>
+
+    </div>
+    <br>
+
+
+
+</div>

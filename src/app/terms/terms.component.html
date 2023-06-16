@@ -1,0 +1,241 @@
+<div class="main">
+    <h1 style="margin-left: 15px; margin-bottom: 20px;">Termini</h1>
+    <div class="card">
+        <div class="tabs">
+            <ul>
+                <li>
+                    <button (click)="showReservedTermsFunc()"
+                        [style.borderBottom]="showReservedTerms? '2px solid #5c616e' : 'none'">Zakazani termini</button>
+                </li>
+                <li>
+                    <button (click)="showTermsFunc()"
+                        [style.borderBottom]="showTerms? '2px solid #5c616e' : 'none'">Termini</button>
+                </li>
+                <li>
+                    <button (click)="showAddTerm()" [style.borderBottom]="addTerm? '2px solid #5c616e' : 'none'">Novi
+                        termin</button>
+                </li>
+
+            </ul>
+        </div>
+
+
+
+        <div *ngIf="showReservedTerms">
+            <div class="center-content">
+                <table id="terms">
+                    <tr>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Index</th>
+                        <th>Datum</th>
+                        <th>Vrijeme</th>
+                        <th>Trajanje</th>
+                        <th>Otkazi</th>
+                        <th>Izmijeni</th>
+                    </tr>
+                    <tr>
+                        <td>Luka</td>
+                        <td>Nikolic</td>
+                        <td>RA31/2018</td>
+                        <td>21.5.2023.</td>
+                        <td>9:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>Marija</td>
+                        <td>Peric</td>
+                        <td>RA45/2018</td>
+                        <td>23.5.2023.</td>
+                        <td>10:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>Stefan</td>
+                        <td>Peric</td>
+                        <td>RA51/2018</td>
+                        <td>21.5.2023.</td>
+                        <td>9:30</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>Nikolina</td>
+                        <td>Nikic</td>
+                        <td>RA39/2018</td>
+                        <td>23.5.2023.</td>
+                        <td>10:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>Vera</td>
+                        <td>Nikolic</td>
+                        <td>RA77/2018</td>
+                        <td>22.5.2023.</td>
+                        <td>11:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>Vesna</td>
+                        <td>Vidic</td>
+                        <td>RA11/2018</td>
+                        <td>29.5.2023.</td>
+                        <td>9:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>Dejan</td>
+                        <td>Simic</td>
+                        <td>IN31/2018</td>
+                        <td>21.5.2023.</td>
+                        <td>12:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>Kristina</td>
+                        <td>Stefanovic</td>
+                        <td>IN21/2018</td>
+                        <td>25.5.2023.</td>
+                        <td>10:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <div *ngIf="showTerms">
+            <div class="center-content-terms">
+                <table id="terms">
+                    <tr>
+                        <th>Datum</th>
+                        <th>Vrijeme</th>
+                        <th>Trajanje</th>
+                        <th>Otkazi</th>
+                        <th>Izmijeni</th>
+                    </tr>
+                    <tr>
+                        <td>28.5.2023.</td>
+                        <td>8:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>28.5.2023.</td>
+                        <td>9:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>29.5.2023.</td>
+                        <td>11:30</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>29.5.2023.</td>
+                        <td>12:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>29.5.2023.</td>
+                        <td>13:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>29.5.2023.</td>
+                        <td>13:30</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>30.5.2023.</td>
+                        <td>8:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+                    <tr>
+                        <td>30.5.2023.</td>
+                        <td>9:00</td>
+                        <td>30 min</td>
+                        <td><button class="cancel-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="close"></mat-icon></button></td>
+                        <td><button class="edit-button"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></button></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <div *ngIf="addTerm">
+            <div class="center-div">
+                <div class="row">
+                    <div class="col-4" id="col-4-add-side"></div>
+                    <div class="col-4" id="col-4-add">
+                        <label>Datum</label>
+                        <input type="date">
+                    </div>
+                    <div class="col-4" id="col-4-add-side"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4" id="col-4-add-side"></div>
+                    <div class="col-4" id="col-4-add">
+                        <label>Vrijeme</label>
+                        <input type="text">
+                    </div>
+                    <div class="col-4" id="col-4-add-side"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-4" id="col-4-add-side"></div>
+                    <div class="col-4" id="col-4-add">
+                        <label>Trajanje</label>
+                        <input type="text">
+                    </div>
+                    <div class="col-4" id="col-4-add-side"></div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-4" id="col-4-add-side">
+                    </div>
+                    <div class="col-4" id="col-4-add" style="text-align: left;">
+                        <button class="add">Dodaj</button>
+                    </div>
+                    <div class="col-4" id="col-4-add-side">
+
+                    </div>
+                    
+                    <!-- <div class="col-3">
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <br><br>
+</div>
